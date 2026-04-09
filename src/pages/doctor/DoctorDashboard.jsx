@@ -190,7 +190,7 @@ const DoctorDashboard = () => {
 
         <div className="grid gap-3 sm:grid-cols-2">
           {patientHistory.map((record) => {
-            const fileUrl = `http://localhost:5000${record.filePath}`;
+            const fileUrl = `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}${record.filePath}`;
             const isImage = /\.(png|jpg|jpeg|webp|gif)$/i.test(record.filePath);
 
             return (

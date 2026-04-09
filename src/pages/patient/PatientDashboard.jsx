@@ -360,7 +360,7 @@ const PatientDashboard = () => {
             >
               <a
                 className="block font-bold text-emerald-700 hover:underline"
-                href={`http://localhost:5000${record.filePath}`}
+                href={`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}${record.filePath}`}
                 rel="noreferrer"
                 target="_blank"
               >
