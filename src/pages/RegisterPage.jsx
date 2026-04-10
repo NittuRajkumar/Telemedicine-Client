@@ -70,7 +70,9 @@ const RegisterPage = () => {
       login(response.data.token, response.data.user);
       navigate(`/${response.data.user.role}`);
     } catch (requestError) {
-      if (requestError.response?.data?.message) {
+      if (requestError.response?.status === 409) {
+        setError('This email is already registered. Please login or use another email.');
+      } else if (requestError.response?.data?.message) {
         setError(requestError.response.data.message);
       } else if (requestError.message === 'Network Error') {
         setError('Cannot reach server. Check backend URL and CORS settings.');

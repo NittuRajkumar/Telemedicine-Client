@@ -47,7 +47,11 @@ const LoginPage = () => {
       login(response.data.token, response.data.user);
       navigate(`/${response.data.user.role}`);
     } catch (requestError) {
-      setError(requestError.response?.data?.message || 'Unable to login');
+      if (requestError.response?.status === 500) {
+        setError('Server error during login. Please try again in a moment.');
+      } else {
+        setError(requestError.response?.data?.message || 'Unable to login');
+      }
     } finally {
       setLoading(false);
     }
