@@ -7,7 +7,7 @@ The app supports three roles:
 1. Patient
 2. Doctor
 3. Admin
-
+DEMO LINK: https://telemedicine-client-banj.vercel.app/login
 Patients can book appointments, upload old health records, and view prescriptions. Doctors can review patient data and issue prescriptions. Admins can manage users and monitor platform stats.
 
 ## Highlights
